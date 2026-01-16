@@ -31,7 +31,7 @@ class ProfileAvatar extends StatelessWidget {
     radius: radius.w, 
     backgroundColor: AppColors.white,
     child: imageUrl == null ? CircleAvatar(
-        radius: radius.w - 2.w, // Inner radius
+        radius: radius.w - 10.w, // Inner radius
         backgroundColor: AppColors.grey,
         child: placeholder,
       ) : CachedNetworkImage(

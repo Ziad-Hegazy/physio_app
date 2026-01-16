@@ -28,9 +28,9 @@ class NavBarItemWidget extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Container(
-            padding: EdgeInsets.all(10.w),
-            width: 51.68.w,
-            height: 51.68.h,
+            padding: EdgeInsets.all(15.w),
+            // width: 51.68.w,
+            // height: 51.68.h,
             decoration: BoxDecoration(
               color: isSelected ? color.withAlpha(26) : Colors.transparent,
               shape: BoxShape.circle,

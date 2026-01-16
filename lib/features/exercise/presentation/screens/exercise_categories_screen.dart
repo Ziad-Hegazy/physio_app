@@ -137,38 +137,45 @@ class ExerciseCategoriesScreen extends StatelessWidget {
                                 itemCount: categories.length,
                                 itemBuilder: (context, index) {
                                   final category = categories[index];
-                                  return Padding(
-                                    padding: EdgeInsets.only(bottom: 20.h),
-                                    child: ExerciseCategoryWidget(
-                                      color: category.iconColor ??
-                                          AppColors.purple,
-                                      title: category.title,
-                                      subtitle: category.subTitle,
-                                      icon: DynamicCachedImage(
-                                        cacheKey: '${category.id}::icon::SVG',
-                                        imageUrl: category.iconUrl,
-                                        fallbackAssetPath:
-                                            category.localFallbackIconAsset,
-                                        width: 46.66.w,
-                                        height: 46.66.w,
+                                  return Column(children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 20.h),
+                                      child: ExerciseCategoryWidget(
                                         color: category.iconColor ??
                                             AppColors.purple,
+                                        title: category.title,
+                                        subtitle: category.subTitle,
+                                        icon: DynamicCachedImage(
+                                          cacheKey: '${category.id}::icon::SVG',
+                                          imageUrl: category.iconUrl,
+                                          fallbackAssetPath:
+                                              category.localFallbackIconAsset,
+                                          width: 46.66.w,
+                                          height: 46.66.w,
+                                          color: category.iconColor ??
+                                              AppColors.purple,
+                                        ),
+                                        onTap: () {
+                                          final args = ExerciseFilterScreenArgs(
+                                            allCategoryTitles:
+                                                allRealCategoryTitles,
+                                            selectedCategory: category.title,
+                                            isOffline: state.isOffline,
+                                            exerciseCategoryCubit:
+                                                exerciseCategoryCubit,
+                                          );
+                                          Navigator.of(context).pushNamed(
+                                              Routes.exerciseFilter,
+                                              arguments: args);
+                                        },
                                       ),
-                                      onTap: () {
-                                        final args = ExerciseFilterScreenArgs(
-                                          allCategoryTitles:
-                                              allRealCategoryTitles,
-                                          selectedCategory: category.title,
-                                          isOffline: state.isOffline,
-                                          exerciseCategoryCubit:
-                                              exerciseCategoryCubit,
-                                        );
-                                        Navigator.of(context).pushNamed(
-                                            Routes.exerciseFilter,
-                                            arguments: args);
-                                      },
                                     ),
-                                  );
+                                    index == categories.length - 1
+                                        ? SizedBox(
+                                            height: 120,
+                                          )
+                                        : SizedBox.shrink()
+                                  ]);
                                 },
                               );
                           }

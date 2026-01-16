@@ -45,7 +45,7 @@ class _TileState extends State<Tile> {
             spacing: 20.w,
             children: [
               Container(
-                padding: EdgeInsets.all(5.w),
+                padding: EdgeInsets.all(10.w),
                 decoration: BoxDecoration(
                   color: AppColors.teal.withAlpha(39),
                   borderRadius: BorderRadius.circular(12.r),

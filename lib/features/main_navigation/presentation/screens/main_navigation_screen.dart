@@ -19,6 +19,7 @@ class MainNavigationScreen extends StatelessWidget {
       builder: (context, state) {
         final allTabs = NavigationTab.values;
         return Scaffold(
+          extendBody: true,
           body: IndexedStack(
             index: state.index,
             children: state.pages,
@@ -47,6 +48,7 @@ class MainNavigationScreen extends StatelessWidget {
                         return NavItem(
                           icon: AppIcon(
                             tab.icon,
+                            size:31.68,
                           ),
                           selectedIcon: AppIcon(
                             tab.selectedIcon,

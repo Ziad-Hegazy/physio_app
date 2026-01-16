@@ -29,28 +29,25 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [AppColors.grey.withAlpha(0), AppColors.grey],
+              begin: Alignment.topCenter,
+              end: Alignment(0.0,-0.4))),
       child: Flex(
         direction: Axis.horizontal,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: EdgeInsets.only(
-              top: 16.h,
+              top: 40.h,
               bottom: 32.h,
             ),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(200.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.08),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
             ),
-            padding: EdgeInsets.all(12.w),
+            padding: EdgeInsets.all(10.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(navItems.length, (index) {
