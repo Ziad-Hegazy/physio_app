@@ -285,6 +285,7 @@ class UserSettingsScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () => _showLogoutDialog(context),
                     style: AppButtonThemes.textButton.style?.copyWith(
+                      backgroundColor: WidgetStatePropertyAll(AppColors.red.withAlpha(39)),
                       foregroundColor: WidgetStateProperty.all(AppColors.red),
                     ),
                     child: Skeletonizer(
@@ -315,6 +316,7 @@ class UserSettingsScreen extends StatelessWidget {
     final state = context.watch<AppManagerCubit>().state;
     return Container(
       clipBehavior: Clip.antiAlias,
+      padding: EdgeInsets.symmetric(vertical:10.h),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(25.r),
@@ -324,7 +326,7 @@ class UserSettingsScreen extends StatelessWidget {
           Tile(
             icon: Skeleton.shade(
               child: AppIcon(AppAssets.iconly.bold.colorSchemeSwitch,
-                  color: AppColors.teal, size: 46.w),
+                  color: AppColors.teal, size: 27.w),
             ),
             title: 'Color scheme',
             subTitle: getThemeModeText(state.themeMode),
@@ -333,7 +335,7 @@ class UserSettingsScreen extends StatelessWidget {
           Tile(
             icon: Skeleton.shade(
               child: AppIcon(AppAssets.iconly.bold.languageSwitch,
-                  color: AppColors.teal, size: 46.w),
+                  color: AppColors.teal, size: 27.w),
             ),
             title: 'Language',
             subTitle: 'English',

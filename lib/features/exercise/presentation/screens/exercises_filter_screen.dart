@@ -250,9 +250,9 @@ class ExercisesFilterScreen extends StatelessWidget {
                                         imageUrl: exercise.iconUrl,
                                         fallbackAssetPath:
                                             exercise.localFallbackIconAsset,
-                                        width: 46.66.w,
-                                        height: 46.66.w,
-                                        color: AppColors.black50,
+                                        width: 35.66.w,
+                                        height: 35.66.w,
+                                        color: AppColors.teal,
                                       ),
                                       title: exercise.title,
                                       subTitle: exercise.subTitle,
